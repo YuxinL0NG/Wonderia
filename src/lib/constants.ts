@@ -8,7 +8,7 @@ export const SITE_CONFIG = {
 export const NAV_ITEMS = [
   { label: "About Us", href: "#about", icon: "Info" },
   { label: "Features", href: "#benefits", icon: "Star" },
-  { label: "Contact", href: "#contact", icon: "Mail" },
+  { label: "Contact", href: "/contact", icon: "Mail" },
 ] as const;
 
 export const SOCIAL_LINKS = {

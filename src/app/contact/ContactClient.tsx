@@ -38,8 +38,14 @@ export default function ContactClient() {
 
             {/* Title */}
             <motion.div {...fadeInUp} transition={{ duration: 0.6, ease: "easeOut" }}>
+              <p
+                className="text-sm font-bold tracking-widest uppercase mb-3"
+                style={{ color: C.primary }}
+              >
+                We're here to help
+              </p>
               <h1
-                className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight"
+                className="text-5xl sm:text-6xl font-black leading-tight"
                 style={{ color: C.heading }}
               >
                 CONTACT US
@@ -53,17 +59,21 @@ export default function ContactClient() {
             <motion.div
               {...fadeInUp}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              className="flex flex-col gap-3"
+              className="flex flex-col gap-2"
             >
-              <p className="text-lg font-semibold" style={{ color: C.dark }}>
+              <p className="text-sm font-bold tracking-widest uppercase" style={{ color: C.dark }}>
+                Self-service
+              </p>
+              <p style={{ color: C.muted }}>
                 Got a quick question?{" "}
                 <a
                   href="#"
-                  className="font-semibold underline underline-offset-4 decoration-2 transition-opacity duration-200 hover:opacity-70"
+                  className="font-semibold underline underline-offset-2 transition-opacity duration-200 hover:opacity-70"
                   style={{ color: C.primary }}
                 >
-                  Check our FAQs.
+                  Check our FAQs
                 </a>
+                .
               </p>
             </motion.div>
 
@@ -73,17 +83,17 @@ export default function ContactClient() {
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
               className="flex flex-col gap-4"
             >
-              <p className="text-lg font-semibold" style={{ color: C.dark }}>
-                Still need a hand?
+              <p className="text-sm font-bold tracking-widest uppercase" style={{ color: C.dark }}>
+                Talk to us
               </p>
-              <p className="text-lg" style={{ color: C.dark }}>
-                Our team is just a message away.
+              <p style={{ color: C.muted }}>
+                Still need a hand? Our team is just a message away.
               </p>
-              <p className="text-lg" style={{ color: C.muted }}>
+              <p style={{ color: C.muted }}>
                 Email us directly at{" "}
                 <a
                   href={`mailto:${SITE_CONFIG.email}`}
-                  className="font-semibold transition-opacity duration-200 hover:opacity-70"
+                  className="font-semibold underline underline-offset-2 transition-opacity duration-200 hover:opacity-70"
                   style={{ color: C.primary }}
                 >
                   {SITE_CONFIG.email}
@@ -91,13 +101,13 @@ export default function ContactClient() {
               </p>
               <a
                 href={`mailto:${SITE_CONFIG.email}`}
-                className="self-start px-8 py-3.5 rounded-full font-bold text-white uppercase tracking-wide transition-all duration-200 hover:scale-105 hover:shadow-xl"
+                className="self-start px-8 py-3 rounded-full font-black text-white uppercase tracking-widest transition-all duration-200 hover:scale-105 hover:opacity-90"
                 style={{
                   backgroundColor: C.primary,
                   boxShadow: `0 6px 20px rgba(224,120,32,0.35)`,
                 }}
               >
-                GET IN TOUCH
+                Get in Touch
               </a>
             </motion.div>
 
@@ -105,50 +115,55 @@ export default function ContactClient() {
             <motion.div
               {...fadeInUp}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
-              className="flex flex-col gap-3"
+              className="flex flex-col gap-2"
             >
-              <p className="text-lg" style={{ color: C.muted }}>
+              <p className="text-sm font-bold tracking-widest uppercase" style={{ color: C.dark }}>
+                Community
+              </p>
+              <p style={{ color: C.muted }}>
+                Join our community on{" "}
                 <a
                   href={SOCIAL_LINKS.reddit}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 font-semibold underline underline-offset-4 decoration-2 transition-opacity duration-200 hover:opacity-70"
+                  className="inline-flex items-center gap-1.5 font-semibold underline underline-offset-2 transition-opacity duration-200 hover:opacity-70"
                   style={{ color: C.primary }}
                 >
                   <RedditIcon />
-                  Join our community on Reddit
+                  Reddit
                 </a>
                 {" "}to chat with fellow pianists.
               </p>
             </motion.div>
           </div>
 
-          {/* ── Right: Product showcase ── */}
+          {/* ── Right: Momo illustration ── */}
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
-            className="md:w-96 flex flex-col items-center gap-6 shrink-0"
+            className="md:w-80 flex flex-col items-center gap-6 shrink-0"
           >
-            {/* Character/Product display */}
+            {/* Character placeholder */}
             <div
-              className="w-full aspect-square rounded-3xl flex flex-col items-center justify-center gap-4 p-8"
+              className="w-full aspect-square rounded-3xl flex flex-col items-center justify-center gap-3"
               style={{
-                backgroundColor: "#2D1509",
+                backgroundColor: "rgba(224,120,32,0.1)",
+                border: `2px dashed rgba(224,120,32,0.3)`,
               }}
             >
-              <span className="text-9xl">🎹</span>
-              <p className="text-sm text-center px-4 text-white/60">
-                Product illustration placeholder
+              <span className="text-8xl">🐻</span>
+              <p className="text-sm italic text-center px-4" style={{ color: C.muted }}>
+                [ Momo character — asset coming soon ]
               </p>
             </div>
 
             {/* Fun caption */}
             <p
-              className="text-center text-lg font-medium"
+              className="text-center text-base font-medium italic"
               style={{ color: C.muted }}
             >
-              Even the greats needed a little help sometimes.
+              "Even the greats needed a little help sometimes."
             </p>
           </motion.div>
 
