@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { TESTIMONIALS, HASHTAG } from "@/lib/constants";
 
 const C = {
-  pageBg:  "#FAF0DC",
+  // 移除了 pageBg: "#FAF0DC"，让全局渐变透出来
   heading: "#C84820",
   primary: "#E07820",
   muted:   "#7A5540",
@@ -27,37 +27,40 @@ export default function TestimonialsSection() {
   return (
     <section
       id="testimonials"
-      className="py-28 px-6"
-      style={{ backgroundColor: C.pageBg }}
+      className="py-28 px-6 bg-transparent"
     >
-      {/* Top divider */}
-      <div
-        className="max-w-7xl mx-auto mb-16 h-px w-full"
-        style={{ background: `linear-gradient(to right, transparent, ${C.primary}30, transparent)` }}
-      />
 
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row gap-16">
+        <div className="flex flex-col md:flex-row gap-30">
 
-          {/* Left — title (sticky in future iteration) */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="md:w-64 shrink-0"
+            className="md:w-96 shrink-0"
           >
             <h2
-              className="text-4xl sm:text-5xl font-black leading-tight"
-              style={{ color: C.heading }}
+              className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-wide leading-[1.1] flex flex-col"
+              style={{ color: "#701D02" }}
             >
-              Successful
-              <br />
-              stories
+              <span>Successful</span>
+              <span className="flex items-center gap-3">
+                stories
+                <img
+                  src="/icons/successful-stories/tick.svg"
+                  alt="tick"
+                  className="w-10 h-10 md:w-12 md:h-12"
+                />
+              </span>
             </h2>
-            <p className="mt-4 text-sm leading-relaxed" style={{ color: C.muted }}>
-              Real pianists, real progress. Hear from our growing community.
-            </p>
+            <div className="flex justify-center mt-12">
+              <img
+                src="/images/avatars/stories.svg"
+                alt="stories"
+                className="w-64 md:w-80"
+              />
+            </div>
           </motion.div>
 
           {/* Right — testimonial list */}
@@ -73,55 +76,21 @@ export default function TestimonialsSection() {
                 key={t.author}
                 variants={fadeInUp}
                 transition={{ duration: 0.6, ease: "easeOut" }}
+                className={i > 0 ? "mt-8" : ""}
               >
-                {/* Divider above each item */}
-                {i > 0 && (
-                  <div className="my-8 h-px w-full" style={{ backgroundColor: C.divider }} />
-                )}
-
-                <div className="flex flex-col gap-3">
-                  {/* Title */}
-                  <h3 className="text-xl font-bold" style={{ color: C.dark }}>
-                    {t.title}
-                  </h3>
-
-                  {/* Body */}
-                  <p className="text-base leading-relaxed" style={{ color: C.muted }}>
-                    {t.body}
-                  </p>
-
-                  {/* Author row */}
-                  <div className="flex items-center gap-3 mt-2">
-                    {/* Avatar placeholder — swap with <Image> when real photos arrive */}
-                    <div
-                      className="w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm shrink-0"
-                      style={{ backgroundColor: C.avatarBg }}
-                    >
-                      {t.author[0]}
-                    </div>
-                    <span className="text-sm font-semibold" style={{ color: C.dark }}>
-                      {t.author}
-                    </span>
-                  </div>
-                </div>
+                <img
+                  src={
+                    i === 0
+                      ? "/icons/successful-stories/lily.svg"
+                      : i === 1
+                      ? "/icons/successful-stories/julian.svg"
+                      : "/icons/successful-stories/mark.svg"
+                  }
+                  alt={`${t.author}'s story`}
+                  className="w-full"
+                />
               </motion.div>
             ))}
-
-            {/* Bottom divider */}
-            <div className="my-8 h-px w-full" style={{ backgroundColor: C.divider }} />
-
-            {/* Social CTA */}
-            <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-sm"
-              style={{ color: C.muted }}
-            >
-              Share your Wonderia story with the hashtag{" "}
-              <span className="font-bold" style={{ color: C.primary }}>{HASHTAG}</span>
-            </motion.p>
           </motion.div>
         </div>
       </div>

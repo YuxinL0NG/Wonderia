@@ -5,7 +5,8 @@ html {
 }
 
 body {
-  background-color: #FAF0DC;
+  /* 修改了这里：改用 background，并补上了结尾的右括号 ) */
+  background: linear-gradient(180deg, #FFFDF0 0%, #FFFADA 100%);
   color: #2D1509;
   font-family: "Inter", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -13,4 +14,4 @@ body {
 
 ::-webkit-scrollbar        { width: 6px; }
 ::-webkit-scrollbar-track  { background: #FAF0DC; }
-::-webkit-scrollbar-thumb  { background: #E07820; border-radius: 3px; }
+::-webkit-scrollbar-thumb  { background: #FEAC7B; border-radius: 3px; }
